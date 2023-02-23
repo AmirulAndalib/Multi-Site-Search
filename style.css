@@ -1,0 +1,50 @@
+/* Center the header and search elements */
+h1, label {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Style the search input field */
+input[type="search"] {
+  width: 300px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Style the search button */
+button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Style the search results */
+#results {
+  margin-top: 20px;
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.result img {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.result h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.result a {
+  text-decoration: none;
+  color: #333;
+}

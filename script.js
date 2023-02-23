@@ -25,26 +25,19 @@ function searchWebsites(query) {
     },
   ];
   websites.forEach((website) => {
-    let count = 0;
     fetch(website.url)
       .then((response) => response.text())
       .then((html) => {
-        const imageMatches = html.matchAll(website.imageRegex);
-        const nameMatches = html.matchAll(website.nameRegex);
-        const linkMatches = html.matchAll(website.linkRegex);
-        for (let i = 0; i < imageMatches.length && i < nameMatches.length && i < linkMatches.length && count < 10; i++) {
-          const imageMatch = imageMatches[i];
-          const nameMatch = nameMatches[i];
-          const linkMatch = linkMatches[i];
-          if (imageMatch && nameMatch && linkMatch) {
-            const result = {
-              name: nameMatch[1],
-              image: imageMatch[1],
-              link: linkMatch[1],
-            };
-            displaySearchResult(result, website.name);
-            count++;
-          }
+        const imageMatch = html.match(website.imageRegex);
+        const nameMatch = html.match(website.nameRegex);
+        const linkMatch = html.match(website.linkRegex);
+        if (imageMatch && nameMatch && linkMatch) {
+          const result = {
+            name: nameMatch[1],
+            image: imageMatch[1],
+            link: linkMatch[1],
+          };
+          displaySearchResult(result, website.name);
         }
       })
       .catch((error) => {

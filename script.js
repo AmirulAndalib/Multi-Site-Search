@@ -6,14 +6,14 @@ function searchWebsites(query) {
       name: 'Comrademao',
       url: `https://comrademao.com/?s=${query}`,
       imageRegex: /<img src="([^"]+)"/,
-      nameRegex: /<h2 class="result-title">([^<]+)<\/h2>/,
-      linkRegex: /<a href="([^"]+)" class="result-link"/,
+      nameRegex: /<div class="bigor">\s+<div class="tt">\s+([^<]+)\s+<\/div>/,
+      linkRegex: /<a href="([^"]+)"/,
     },
     {
       name: 'example.net',
       url: `https://www.example.net/search?q=${query}`,
       imageRegex: /<img src="([^"]+)" alt="[^"]*"/,
-      nameRegex: /<h3><a href="[^"]+" class="result-title">([^<]+)<\/a><\/h3>/,
+      nameRegex: /<h3><a href="[^"]+" class="tt">([^<]+)<\/a><\/h3>/,
       linkRegex: /<h3><a href="([^"]+)" class="result-title">[^<]+<\/a><\/h3>/,
     },
     {

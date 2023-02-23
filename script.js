@@ -3,8 +3,8 @@ function searchWebsites(query) {
   results.innerHTML = '';
   const websites = [
     {
-      name: 'example.com',
-      url: `https://www.example.com/search?q=${query}`,
+      name: 'Comrademao',
+      url: `https://comrademao.com/?s=${query}`,
       imageRegex: /<img src="([^"]+)"/,
       nameRegex: /<h2 class="result-title">([^<]+)<\/h2>/,
       linkRegex: /<a href="([^"]+)" class="result-link"/,
